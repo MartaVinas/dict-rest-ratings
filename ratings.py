@@ -28,13 +28,14 @@ def read_ratings(filename):
 
 
 def sort_ratings(dictionary):
+	""" Sort restaurant ratings by restaurant name."""
+	return sorted(dictionary.items())
+
+
+def print_ratings(sorted_restaurant):
 	""" """
-	pass
+	for restaurant in sorted_restaurant:
+		print(restaurant[0] + "is rated at " + str(restaurant[1]) + ".")
 
 
-def print_ratings():
-	""" """
-	pass
-
-
-read_ratings(sys.argv[1])
+print_ratings(sort_ratings(read_ratings(sys.argv[1])))
