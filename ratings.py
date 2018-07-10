@@ -34,8 +34,22 @@ def sort_ratings(dictionary):
 
 def print_ratings(sorted_restaurant):
 	""" """
-	for restaurant in sorted_restaurant:
-		print(restaurant[0] + "is rated at " + str(restaurant[1]) + ".")
+	for restaurant, rating in sorted_restaurant:
+		print("{} is rated at {}.".format(restaurant, rating))
 
 
+def get_new_entry(restaurant_dict):
+	restaurant = input("What restaurant would you like to rate? ")
+	score = input("How would you rate this restaurant (from 0 to 5? ")
+
+	# add new entry from user
+	restaurant_dict[restaurant] = score
+
+	# return the dictionary
+	return restaurant_dict
+
+
+## TESTS
 print_ratings(sort_ratings(read_ratings(sys.argv[1])))
+
+#get_new_entry(read_ratings(sys.argv[1])
