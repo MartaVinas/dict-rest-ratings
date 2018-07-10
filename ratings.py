@@ -39,6 +39,8 @@ def print_ratings(sorted_restaurant):
 
 
 def get_new_entry(restaurant_dict):
+	""" Get a new entry (restaurant name and its rating) from the user."""
+	# save user's response in variables
 	restaurant = input("What restaurant would you like to rate? ")
 	score = input("How would you rate this restaurant (from 0 to 5)? ")
 
@@ -50,10 +52,14 @@ def get_new_entry(restaurant_dict):
 
 
 def write_new_file(new_file_name, restaurant_dict):
+	""" Take dictionary with new entry from user and save to file."""
+	# open a new file to write to
 	with open(new_file_name, 'w') as new_file:
+		# iter through (restaurant, rating) pairs, adding each pair to the file
 		for restaurant, rating in restaurant_dict.items():
 			new_file.write("{}:{}\n".format(restaurant, rating))
 
+	# confirmation
 	print("New file written!")
 
 
